@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gopy</title>
+	<style type="text/css">
+body {
+	text-align: center;
+	background: lightgray;
+	
+}
+.row {
+	display: block;
+	padding: 7px 8px;
+	margin-bottom: 7px;
+}
+
+.row:hover {
+	background: #f1f7fa;
+}
+
+.label {
+	display: inline-block;
+	font-size: 1.2em;
+	font-weight: bold;
+	width: 120px;
+	padding: 6px 0px;
+	color: #464646;
+	vertical-align: top;
+}
+
+.req {
+	color: #ca5354
+}
+
+.note {
+	font-size: 1.2em;
+	line-height: 1.33em;
+	font-weight: normal;
+	padding: 2px 7px;
+	margin-bottom: 10px;
+}
+
+.input:focus, .textarea:focus {
+	outline: none;
+}
+
+::-webkit-input-placeholder { color: #aaafbd; font-style: italic; } 
+:-moz-placeholder { color: #aaafbd; font-style: italic; }           
+::-moz-placeholder { color: #aaafbd; font-style: italic; }          
+:-ms-input-placeholder { color: #aaafbd; font-style: italic; } 
+
+.txt {
+	display: inline-block;
+	padding: 8px,9px;
+	padding-right: 30px;
+  	width: 240px;
+  	font-family: 'Oxygen', sans-serif;
+	font-size: 1.35em;
+	font-weight: normal;
+	color: #898989;
+	background-color: #f0f0f0;
+	background-image: url('images/h25.png');
+	background-position: 110% center;
+	background-repeat: no-repeat;
+	border: 1px solid #ccc;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 2px rgba(25, 25, 25, 0.25) inset, -1px 1px #fff;
+	-moz-box-shadow: 0 1px 2px rgba(25, 25, 25, 0.25) inset, -1px 1px #fff;
+	box-shadow: 0 1px 2px rgba(25, 25, 25, 0.25) inset, -1px 1px #fff;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+  
+.txtarea {
+	display: inline-block;
+	padding: 8px 11px;
+	padding-right: 30px;
+	width: 320px;
+	height: 120px;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 1.35em;
+	font-weight: normal;
+	color: #898989;
+	background-color: #f0f0f0;
+	background-image: url('images/h25.png');
+	background-position: 110% 4%;
+	background-repeat: no-repeat;
+	border: 1px solid #ccc;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 4px -1px #a8a8a8 inset;
+	-moz-box-shadow: 0 1px 4px -1px #a8a8a8 inset;
+	box-shadow: 0 1px 4px -1px #a8a8a8 inset;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+.txt:focus, form .txtarea:focus {
+	width: 300px;
+	color: #545454;
+	background-color: #fff;
+	background-position: 110% center;
+	background-repeat: no-repeat;
+	border-color: #059;
+	-webkit-box-shadow: 0 1px 4px -1px #a8a8a8 inset, 0 1px rgba(255, 255, 255, 0.6), 0 0 11px rgba(70, 100, 200, 0.7);
+	-moz-box-shadow: 0 1px 4px -1px #a8a8a8 inset, 0 1px rgba(255, 255, 255, 0.6), 0 0 11px rgba(70, 100, 200, 0.7);
+	box-shadow: 0 1px 4px -1px #a8a8a8 inset, 0 1px rgba(255, 255, 255, 0.6), 0 0 11px rgba(70, 100, 200, 0.7);
+	}
+.txtarea:focus {
+	width: 375px;
+	background-position: 110% 4%;
+}
+  
+.txt:valid {
+	background-color: #deecda;
+	background-position: 98% center;
+	background-repeat: no-repeat;
+	color: #7d996e;
+	border: 1px solid #95bc7d;
+}
+.txtarea:valid {
+	background-color: #deecda;
+	background-position: 98% 4%;
+	background-repeat: no-repeat;
+	color: #7d996e;
+	border: 1px solid #95bc7d;
+}
+.txt:focus:valid, .txtarea:focus:valid {
+	-webkit-box-shadow: 0 1px 4px -1px #a8a8a8 inset, 0 1px rgba(255, 255, 255, 0.6), 0 0 11px rgba(120, 200, 70, 0.7);
+	-moz-box-shadow: 0 1px 4px -1px #a8a8a8 inset, 0 1px rgba(255, 255, 255, 0.6), 0 0 11px rgba(120, 200, 70, 0.7);
+	box-shadow: 0 1px 4px -1px #a8a8a8 inset, 0 1px rgba(255, 255, 255, 0.6), 0 0 11px rgba(120, 200, 70, 0.7);
+}
+
+
+.submitbtn:hover, .submitbtn:focus {
+	-webkit-box-shadow: 0 0 15px rgba(70, 100, 200, 0.9);
+	-moz-box-shadow: 0 0 15px rgba(70, 100, 200, 0.9);
+	box-shadow: 0 0 15px rgba(70, 100, 200, 0.9);
+}
+
+.submitbtn:active {
+	-webkit-box-shadow: 0 0 15px rgba(70, 100, 200, 0.9), 0 1px 3px rgba(0,0,0,0.4) inset;
+	-moz-box-shadow: 0 0 15px rgba(70, 100, 200, 0.9), 0 1px 3px rgba(0,0,0,0.4) inset;
+	box-shadow: 0 0 15px rgba(70, 100, 200, 0.9), 0 1px 3px rgba(0,0,0,0.4) inset;
+}
+.footer {
+  background: #000;
+  width: auto;
+  text-align: center;
+  height: 60px;
+  color: #FFF;
+  clear: left;
+  line-height: 60px;
+}
+
+	</style>
+</head>
+<body>
+
+	<h2>Thư góp ý </h2>
+
+<form id="contactform" name="contact" method="post" action="">
+	<p class="note"><span class="req"> * </span>(Asterisk fields are required)</p>
+
+	<div class="row">
+		<label for="name"> Your Name: <span class="req"> * </span></label>
+		<input type="text" name="name" id="name"
+		class="txt" tabindex="1" placeholder="Enter your name..." required="">
+	</div>
+
+	<div class="row">
+		<label for="email"> Email Address: <span class="req"> * </span></label>
+		<input type="email" name="email" id="email"
+		class="txt" tabindex="2" placeholder="address@gmail.com" required="">
+	</div>
+
+	<div class="row">
+		<label for=" contact problem"> Contact Problem: <span class="req"> * </span></label>
+		<input type="text" name="contact problem" id="contact problem"
+		class="txt" tabindex="3" placeholder="Contact problem..." required="">
+	</div>
+
+	<div class="row">
+		<label for=" message"> Message: <span class="req"> * </span></label>
+		<textarea name="message" id="message" class="txtarea" tabindex="4" placeholder="Enter your message..." required=""></textarea>
+	</div>
+
+	<div class="center">
+		<input type="submit" name="submitbtn" id="submitbtn" tabindex="5" value="Send Message">
+	</div>
+	
+</form>
+
+<div class="footer">
+			<div class="container"></div>
+			<h2>NguyenNga@2020</h2>
+		</div>
+
+</body>
+</html>
